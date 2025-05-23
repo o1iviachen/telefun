@@ -13,6 +13,7 @@
 		581EBF772DE0F10C00C250DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581EBF752DE0F10C00C250DD /* Main.storyboard */; };
 		581EBF792DE0F10D00C250DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581EBF782DE0F10D00C250DD /* Assets.xcassets */; };
 		581EBF7C2DE0F10D00C250DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581EBF7A2DE0F10D00C250DD /* LaunchScreen.storyboard */; };
+		581EBF842DE0FC8600C250DD /* TiltingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EBF832DE0FC8600C250DD /* TiltingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		581EBF782DE0F10D00C250DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		581EBF7B2DE0F10D00C250DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581EBF7D2DE0F10D00C250DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581EBF832DE0FC8600C250DD /* TiltingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				581EBF782DE0F10D00C250DD /* Assets.xcassets */,
 				581EBF7A2DE0F10D00C250DD /* LaunchScreen.storyboard */,
 				581EBF7D2DE0F10D00C250DD /* Info.plist */,
+				581EBF832DE0FC8600C250DD /* TiltingViewController.swift */,
 			);
 			path = telefun;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581EBF842DE0FC8600C250DD /* TiltingViewController.swift in Sources */,
 				581EBF742DE0F10C00C250DD /* ViewController.swift in Sources */,
 				581EBF702DE0F10C00C250DD /* AppDelegate.swift in Sources */,
 				581EBF722DE0F10C00C250DD /* SceneDelegate.swift in Sources */,
