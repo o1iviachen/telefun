@@ -11,13 +11,18 @@ import CoreMotion
 class TiltingViewController: UIViewController {
     
     let motionManager = CMMotionManager()
+    var phoneNumber: String? = nil
     
+    @IBOutlet weak var emilyPhoto: UIImageView!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var ballView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         ballView.layer.cornerRadius = 25
         moveBall()
+        phoneNumberLabel.text = "Confirm your phone number: \(phoneNumber!)"
     }
     
     func moveBall() {

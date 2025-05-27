@@ -8,28 +8,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="telefun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="telefun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MT-eH-SlC">
-                                <rect key="frame" x="159" y="380" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="IhT-m9-E2q" kind="show" id="461-ag-vj3"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5FS-Js-guX">
+                                <rect key="frame" x="99.666666666666671" y="361.66666666666669" width="193.66666666666663" height="128.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJV-Ar-RFk">
+                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKm-Gi-uuU">
+                                        <rect key="frame" x="0.0" y="40.333333333333314" width="193.66666666666666" height="34"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MT-eH-SlC">
+                                        <rect key="frame" x="57.999999999999986" y="94.333333333333314" width="78.000000000000014" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxF-52-Rxe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JKm-Gi-uuU" firstAttribute="leading" secondItem="5FS-Js-guX" secondAttribute="leading" id="Kxr-Cp-Mzx"/>
+                                    <constraint firstAttribute="trailing" secondItem="JKm-Gi-uuU" secondAttribute="trailing" id="RWY-BU-Hxl"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5FS-Js-guX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oAO-2P-qQ5"/>
+                            <constraint firstItem="5FS-Js-guX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ygB-GB-seS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ymb-hU-gJu"/>
+                    <connections>
+                        <outlet property="phoneTextField" destination="JKm-Gi-uuU" id="3ro-bp-Be7"/>
+                        <segue destination="IhT-m9-E2q" kind="show" identifier="confirmSegue" id="nBn-WY-cgj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,17 +79,34 @@
                                     <constraint firstAttribute="height" constant="50" id="VJf-jc-e3v"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm your phone number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgs-dY-p05">
+                                <rect key="frame" x="87" y="118" width="219" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AQ-Fr-v2G">
+                                <rect key="frame" x="58" y="179" width="104" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DAe-VH-qP3"/>
+                                    <constraint firstAttribute="height" constant="100" id="maY-PS-FBZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q6Y-IR-aeM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cgs-dY-p05" firstAttribute="centerX" secondItem="o6k-Tf-WjH" secondAttribute="centerX" id="4mB-35-tNu"/>
                             <constraint firstItem="GY7-Fc-Ehn" firstAttribute="centerX" secondItem="o6k-Tf-WjH" secondAttribute="centerX" id="IJc-JX-Y5j"/>
                             <constraint firstItem="GY7-Fc-Ehn" firstAttribute="centerY" secondItem="o6k-Tf-WjH" secondAttribute="centerY" id="dPb-sg-HuD"/>
+                            <constraint firstItem="cgs-dY-p05" firstAttribute="top" secondItem="Q6Y-IR-aeM" secondAttribute="top" constant="15" id="iwp-bB-J1d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w99-e7-t3p"/>
                     <connections>
                         <outlet property="ballView" destination="GY7-Fc-Ehn" id="yVC-aH-Kbl"/>
+                        <outlet property="emilyPhoto" destination="2AQ-Fr-v2G" id="Ye6-Rb-LP7"/>
+                        <outlet property="phoneNumberLabel" destination="cgs-dY-p05" id="krw-a9-OEC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXw-d6-gda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -88,6 +133,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
