@@ -14,8 +14,8 @@ class TiltingViewController: UIViewController {
     var phoneNumber: String? = nil
     var phoneNumberCharacters: [Character] = []
     var counter: Int = 0
-    var xBounds: CGFloat? = nil
-    var yBounds: CGFloat? = nil
+    var xBounds: [CGFloat] = []
+    var yBounds: [CGFloat] = []
     
     @IBOutlet weak var emilyPhoto: UIImageView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -30,13 +30,16 @@ class TiltingViewController: UIViewController {
         self.numberLabel.text = String(self.phoneNumberCharacters[counter])
         moveBall()
         phoneNumberLabel.text = "Confirm your phone number: \(phoneNumber!)"
-//        print(UIScreen.main.bounds)
     }
     
     override func viewDidLayoutSubviews() {
-        // Code from https://developer.apple.com/documentation/corefoundation/cgrect/size
-        self.xBounds = view.safeAreaLayoutGuide.layoutFrame.size.width
-        self.yBounds = view.safeAreaLayoutGuide.layoutFrame.size.height
+        // Code from https://developer.apple.com/documentation/corefoundation/cgrect/minx
+        self.xBounds.append(view.safeAreaLayoutGuide.layoutFrame.minX)
+        self.xBounds.append(view.safeAreaLayoutGuide.layoutFrame.maxX)
+        self.yBounds.append(view.safeAreaLayoutGuide.layoutFrame.minY)
+        self.yBounds.append(view.safeAreaLayoutGuide.layoutFrame.maxY)
+        print(self.xBounds, self.yBounds)
+        randomPosition(object: numberLabel)
     }
     
     func moveBall() {
@@ -86,8 +89,8 @@ class TiltingViewController: UIViewController {
     }
     
     func randomPosition(object: UIView) {
-        let randomX = CGFloat.random(in: 0...self.xBounds!)
-        let randomY = CGFloat.random(in: 0...self.yBounds!)
+        let randomX = CGFloat.random(in: self.xBounds[0]...self.xBounds[1])
+        let randomY = CGFloat.random(in: self.yBounds[0]...self.yBounds[1])
         
         //Code from https://developer.apple.com/documentation/corefoundation/cgrect
         object.frame.origin = CGPoint(x: randomX, y: randomY)
