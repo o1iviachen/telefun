@@ -19,7 +19,7 @@ class TiltingViewController: UIViewController {
     var xBounds: [CGFloat] = []
     var yBounds: [CGFloat] = []
     
-    @IBOutlet weak var emilyPhoto: UIImageView!
+    @IBOutlet weak var gibbyPhoto: UIView!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var ballView: UIView!
     @IBOutlet weak var numberLabel: UILabel!
@@ -32,10 +32,6 @@ class TiltingViewController: UIViewController {
         self.numberLabel.text = String(self.phoneNumberCharacters[counter])
         moveBall()
         phoneNumberLabel.text = "Confirm your phone number: \(phoneNumber!)"
-        self.view.bringSubviewToFront(ballView)
-        self.view.bringSubviewToFront(phoneNumberLabel)
-
-
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,25 +58,34 @@ class TiltingViewController: UIViewController {
                     self.ballView.center = ballCenter
                 }
                 if !self.done {
-                    self.checkCollision(object1: self.ballView, object2: self.numberLabel, type: "number")
+                    self.checkContainsNumber()
+                    self.checkIntersectsImage()
                 }
             }
         }
     }
     
-    func checkCollision(object1: UIView, object2: UIView, type: String) {
-        //Code from https://developer.apple.com/documentation/uikit/uiview/frame
-        let coordinate1 = object1.frame
-        let coordinate2 = object2.frame
+    func checkContainsNumber() {
+        // Code from https://developer.apple.com/documentation/uikit/uiview/frame
+        let ball = self.ballView.frame
+        let number = self.numberLabel.frame
+        
+        // Code from https://developer.apple.com/documentation/corefoundation/cgrect/contains(_:)
+        if ball.contains(number) {
+            updateScreen()
+        }
+    }
+    
+    func checkIntersectsImage() {
+        // Code from https://developer.apple.com/documentation/uikit/uiview/frame
+        let ball = self.ballView.frame
+        let gibby = self.gibbyPhoto.frame
         
         // Code from https://developer.apple.com/documentation/corefoundation/cgrect/intersects(_:)
-        if coordinate1.intersects(coordinate2) {
-            if type == "number" {
-                updateScreen()
-            }
-            else {
-                //hit image -> restart
-            }
+        if ball.intersects(gibby) {
+            done = true
+            print("oijehrw")
+            performSegue(withIdentifier: "lostSegue", sender: self)
         }
     }
     
@@ -92,7 +97,6 @@ class TiltingViewController: UIViewController {
         }
         else {
             done = true
-            performSegue(withIdentifier: "lostSegue", sender: self)
         }
     }
     
