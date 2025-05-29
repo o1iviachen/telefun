@@ -15,6 +15,7 @@
 		581EBF7C2DE0F10D00C250DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581EBF7A2DE0F10D00C250DD /* LaunchScreen.storyboard */; };
 		581EBF842DE0FC8600C250DD /* TiltingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EBF832DE0FC8600C250DD /* TiltingViewController.swift */; };
 		581EBF862DE61D3700C250DD /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581EBF852DE61D3700C250DD /* InitialViewController.swift */; };
+		904DA67B2DE8CF2D0043A46E /* LostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904DA67A2DE8CF2D0043A46E /* LostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		581EBF7D2DE0F10D00C250DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581EBF832DE0FC8600C250DD /* TiltingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltingViewController.swift; sourceTree = "<group>"; };
 		581EBF852DE61D3700C250DD /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		904DA67A2DE8CF2D0043A46E /* LostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				581EBF712DE0F10C00C250DD /* SceneDelegate.swift */,
 				581EBF732DE0F10C00C250DD /* ViewController.swift */,
 				581EBF752DE0F10C00C250DD /* Main.storyboard */,
+				904DA67A2DE8CF2D0043A46E /* LostViewController.swift */,
 				581EBF782DE0F10D00C250DD /* Assets.xcassets */,
 				581EBF7A2DE0F10D00C250DD /* LaunchScreen.storyboard */,
 				581EBF7D2DE0F10D00C250DD /* Info.plist */,
@@ -146,6 +149,7 @@
 			files = (
 				581EBF862DE61D3700C250DD /* InitialViewController.swift in Sources */,
 				581EBF842DE0FC8600C250DD /* TiltingViewController.swift in Sources */,
+				904DA67B2DE8CF2D0043A46E /* LostViewController.swift in Sources */,
 				581EBF742DE0F10C00C250DD /* ViewController.swift in Sources */,
 				581EBF702DE0F10C00C250DD /* AppDelegate.swift in Sources */,
 				581EBF722DE0F10C00C250DD /* SceneDelegate.swift in Sources */,

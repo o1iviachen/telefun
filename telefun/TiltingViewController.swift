@@ -85,6 +85,7 @@ class TiltingViewController: UIViewController {
         }
         else {
             print("done")
+            performSegue(withIdentifier: "lostSegue", sender: self)
         }
     }
     
