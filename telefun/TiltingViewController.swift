@@ -11,6 +11,7 @@ import CoreMotion
 class TiltingViewController: UIViewController {
     
     let motionManager = CMMotionManager()
+    let speed = 50.0
     var phoneNumber: String? = nil
     var phoneNumberCharacters: [Character] = []
     var counter: Int = 0
@@ -51,7 +52,6 @@ class TiltingViewController: UIViewController {
                 if let data = data {
                     let acceleration = data.acceleration
                     var ballCenter = self.ballView.center
-                    let speed = 20.0
                     ballCenter.x += CGFloat(acceleration.x) * speed
                     ballCenter.y -= CGFloat(acceleration.y) * speed
                     self.ballView.center = ballCenter
