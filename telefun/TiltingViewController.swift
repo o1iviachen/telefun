@@ -32,6 +32,10 @@ class TiltingViewController: UIViewController {
         self.numberLabel.text = String(self.phoneNumberCharacters[counter])
         moveBall()
         phoneNumberLabel.text = "Confirm your phone number: \(phoneNumber!)"
+        self.view.bringSubviewToFront(ballView)
+        self.view.bringSubviewToFront(phoneNumberLabel)
+
+
     }
     
     override func viewDidLayoutSubviews() {
