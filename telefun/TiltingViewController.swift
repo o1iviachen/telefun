@@ -52,8 +52,8 @@ class TiltingViewController: UIViewController {
                 if let data = data {
                     let acceleration = data.acceleration
                     var ballCenter = self.ballView.center
-                    ballCenter.x += CGFloat(acceleration.x) * speed
-                    ballCenter.y -= CGFloat(acceleration.y) * speed
+                    ballCenter.x += CGFloat(acceleration.x) * self.speed
+                    ballCenter.y -= CGFloat(acceleration.y) * self.speed
                     self.ballView.center = ballCenter
                 }
                 self.checkCollision(object1: self.ballView, object2: self.numberLabel, type: "number")
