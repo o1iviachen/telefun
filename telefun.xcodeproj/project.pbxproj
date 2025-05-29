@@ -66,10 +66,10 @@
 				581EBF712DE0F10C00C250DD /* SceneDelegate.swift */,
 				581EBF732DE0F10C00C250DD /* ViewController.swift */,
 				581EBF752DE0F10C00C250DD /* Main.storyboard */,
-				904DA67A2DE8CF2D0043A46E /* LostViewController.swift */,
 				581EBF782DE0F10D00C250DD /* Assets.xcassets */,
 				581EBF7A2DE0F10D00C250DD /* LaunchScreen.storyboard */,
 				581EBF7D2DE0F10D00C250DD /* Info.plist */,
+				904DA67A2DE8CF2D0043A46E /* LostViewController.swift */,
 				581EBF832DE0FC8600C250DD /* TiltingViewController.swift */,
 				581EBF852DE61D3700C250DD /* InitialViewController.swift */,
 			);

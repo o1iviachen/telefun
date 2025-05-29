@@ -12,6 +12,7 @@ class TiltingViewController: UIViewController {
     
     let motionManager = CMMotionManager()
     let speed = 50.0
+    var done = false
     var phoneNumber: String? = nil
     var phoneNumberCharacters: [Character] = []
     var counter: Int = 0
@@ -56,7 +57,9 @@ class TiltingViewController: UIViewController {
                     ballCenter.y -= CGFloat(acceleration.y) * self.speed
                     self.ballView.center = ballCenter
                 }
-                self.checkCollision(object1: self.ballView, object2: self.numberLabel, type: "number")
+                if !done {
+                    self.checkCollision(object1: self.ballView, object2: self.numberLabel, type: "number")
+                }
             }
         }
     }
@@ -84,7 +87,7 @@ class TiltingViewController: UIViewController {
             randomPosition(object: self.numberLabel)
         }
         else {
-            print("done")
+            done = true
             performSegue(withIdentifier: "lostSegue", sender: self)
         }
     }

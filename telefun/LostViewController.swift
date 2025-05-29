@@ -12,4 +12,5 @@ class LostViewController: UIViewController {
     override func viewDidLoad() {
         print("lost")
     }
+    //self.navigationController?.popToRootViewController(animated: <#T##Bool#>)
 }
